@@ -1,0 +1,19 @@
+---
+title: "gapminder"
+author: "Marc Galland"
+date: "6/21/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+gapminder <- readr::read_csv('https://raw.githubusercontent.com/carpentries-incubator/open-science-with-r/gh-pages/data/gapminder.csv')
+```
+
+```{r}
+library("tidyverse")
+gapminder %>% 
+  filter(country == "France") %>% 
+  ggplot(aes(x = year, y = lifeExp)) +
+  geom_point()
+```
+
